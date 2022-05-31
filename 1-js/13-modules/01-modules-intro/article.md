@@ -182,7 +182,7 @@ alert(admin.name); // Pete
 
 As you can see, when `1.js` changes the `name` property in the imported `admin`, then `2.js` can see the new `admin.name`.
 
-That's exactly because the module is executed only once. Exports are generated, and then they are shared between importers, so if something changes the `admin` object, other modules will see that.
+That's exactly because the module is executed only once. Exports are generated, and then they are shared between importers, so if something changes the `admin` object, other importers will see that.
 
 **Such behavior is actually very convenient, because it allows us to *configure* modules.**
 
@@ -272,7 +272,7 @@ In other words:
 - module scripts wait until the HTML document is fully ready (even if they are tiny and load faster than HTML), and then run.
 - relative order of scripts is maintained: scripts that go first in the document, execute first.
 
-As a side-effect, module scripts always "see" the fully loaded HTML-page, including HTML elements below them.
+As a side effect, module scripts always "see" the fully loaded HTML-page, including HTML elements below them.
 
 For instance:
 
